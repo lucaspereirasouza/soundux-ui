@@ -22,6 +22,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     searchModal: false,
+    communityModal: false,
     systemInfoModal: false,
     setHotkeyModal: false,
     setVolumeModal: false,
@@ -66,10 +67,12 @@ export default new Vuex.Store({
       allowMultipleOutputs: false,
       useAsDefaultDevice: false,
       muteDuringPlayback: false,
+      communityDownloadPath: '',
     } as Settings,
   },
   getters: {
     searchModal: state => state.searchModal,
+    communityModal: state => state.communityModal,
     // TODO: !settingsModal && !helpModal
     noModalOpen: state =>
       !state.appPassThroughDrawer &&
@@ -124,6 +127,11 @@ export default new Vuex.Store({
     setSearchModal: (state, newState: boolean) => {
       if (!state.appPassThroughDrawer) {
         state.searchModal = newState;
+      }
+    },
+    setCommunityModal: (state, newState: boolean) => {
+      if (!state.appPassThroughDrawer) {
+        state.communityModal = newState;
       }
     },
     setSetHotkeyModal: (state, newState: boolean) => {
@@ -300,6 +308,7 @@ export default new Vuex.Store({
     },
     setUseAsDefaultDevice: (state, value: boolean) => (state.settings.useAsDefaultDevice = value),
     setMuteDuringPlayback: (state, value: boolean) => (state.settings.muteDuringPlayback = value),
+    setCommunityDownloadPath: (state, value: string) => (state.settings.communityDownloadPath = value),
     setSortMode: (state, sortMode: SortMode) => {
       const currentTab = state.tabs[state.settings.selectedTab];
       if (currentTab) {

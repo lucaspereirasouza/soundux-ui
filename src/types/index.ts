@@ -113,4 +113,5 @@ export interface Settings {
   allowMultipleOutputs: boolean;
   useAsDefaultDevice: boolean;
   muteDuringPlayback: boolean;
+  communityDownloadPath: string;
 }

@@ -21,6 +21,14 @@
     <v-btn
       :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-1'"
       class="mb-2"
+      @click="$store.commit('setCommunityModal', true)"
+    >
+      <v-icon left dark>mdi-account-group</v-icon>
+      Community
+    </v-btn>
+    <v-btn
+      :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-1'"
+      class="mb-2"
       @click="$store.commit('setSearchModal', true)"
     >
       <v-icon left dark>mdi-magnify</v-icon>

@@ -131,6 +131,13 @@
               prepend-icon="mdi-speaker-multiple"
               class="ma-0"
             ></v-checkbox>
+            <v-text-field
+              v-model="communityDownloadPath"
+              label="Community Download Path"
+              hide-details
+              prepend-icon="mdi-folder-download"
+              class="ma-0"
+            ></v-text-field>
             <v-checkbox
               v-model="muteDuringPlayback"
               :label="$t('settings.muteDuringPlayback')"
@@ -344,6 +351,15 @@ export default Vue.extend({
       },
       set(state: boolean) {
         this.$store.commit('setAllowMultipleOutputs', state);
+        this.$store.dispatch('saveSettings');
+      },
+    },
+    communityDownloadPath: {
+      get(): string {
+        return this.$store.getters.settings.communityDownloadPath;
+      },
+      set(state: string) {
+        this.$store.commit('setCommunityDownloadPath', state);
         this.$store.dispatch('saveSettings');
       },
     },

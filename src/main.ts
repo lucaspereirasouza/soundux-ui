@@ -46,6 +46,8 @@ declare global {
     setupVBCable: (selectedRecording: string | null) => Promise<boolean | null>;
     restartAsAdmin: () => Promise<void>;
     // others
+    getCommunitySounds: (query: string) => Promise<string>;
+    downloadCommunitySound: (url: string, name: string) => Promise<boolean>;
     openUrl: (url: string) => Promise<void>;
     moveTabs: (tabIds: number[]) => Promise<Tab[]>;
     setSortMode: (tabId: number, sortMode: SortMode) => Promise<Tab | null>;

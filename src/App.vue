@@ -4,6 +4,7 @@
     <v-main>
       <UpdateModal></UpdateModal>
       <SearchModal></SearchModal>
+      <CommunityModal></CommunityModal>
       <SetHotkeyModal></SetHotkeyModal>
       <SetVolumeModal></SetVolumeModal>
       <RemoveTabModal></RemoveTabModal>
@@ -86,6 +87,7 @@ import VolumeSliders from '@/components/VolumeSliders.vue';
 import SideButtons from '@/components/SideButtons.vue';
 import SetHotkeyModal from '@/components/modals/SetHotkeyModal.vue';
 import SearchModal from '@/components/modals/SearchModal.vue';
+import CommunityModal from '@/components/modals/CommunityModal.vue';
 import RemoveTabModal from '@/components/modals/RemoveTabModal.vue';
 import DeleteSoundModal from '@/components/modals/DeleteSoundModal.vue';
 import SetVolumeModal from '@/components/modals/SetVolumeModal.vue';
@@ -102,6 +104,7 @@ export default Vue.extend({
     DeleteSoundModal,
     RemoveTabModal,
     SearchModal,
+    CommunityModal,
     SetHotkeyModal,
     SideButtons,
     VolumeSliders,
